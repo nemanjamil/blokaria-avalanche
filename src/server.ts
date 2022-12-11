@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv' 
+dotenv.config()
 import express, { Express } from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
