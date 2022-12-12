@@ -24,13 +24,21 @@ export const avaxhealth = async (req, res) => {
 };
 
 
-
+declare var process: {
+    env: {
+        AVAX_IP: string
+        AVAX_PORT_NUMBER: number
+        AVAX_PROTOCOL: string
+        AVAX_NETWORK_ID: number
+    }
+}
 export const createUser = async (req, res) => {
 
-    const ip: string = process.env.AVAX_IP
-    const port: number = process.env.AVAX_PORT_NUMBER
-    const protocol: string = process.env.AVAX_PROTOCOL
-    const networkID: number = process.env.AVAX_NETWORK_ID
+
+    const ip: string = process.env.AVAX_IP;
+    const port: number = process.env.AVAX_PORT_NUMBER;
+    const protocol: string = process.env.AVAX_PROTOCOL;
+    const networkID: number = process.env.AVAX_NETWORK_ID;
 
     const avalanche: Avalanche = new Avalanche(ip, port, protocol, networkID)
     const keystore: KeystoreAPI = avalanche.NodeKeys()
