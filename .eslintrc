@@ -11,6 +11,14 @@
     "rules": {
       "no-console": "off",
       "import/prefer-default-export": "off",
-      "@typescript-eslint/no-unused-vars": "warn"
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-inferrable-types": "off",
+      "@typescript-eslint/no-var-requires": "off"
+
+      // "no-underscore-dangle": 0,
+      // "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+      // "no-use-before-define": ["error", { "variables": false }],
+      // "no-multi-str": 0
+
     }
   }

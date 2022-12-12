@@ -8,7 +8,10 @@
     "start": "node ./build/src/index.js",
     "dev": "ts-node ./src/index.ts",
     "dev:nodemon": "nodemon -w src -e ts,json -x ts-node ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:fix": "yarn lint --fix",
+    "lint:watch": "yarn lint --watch"
   },
   "keywords": [
     "express",
@@ -27,6 +30,8 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "avalanche": "^3.15.5",
+    "axios": "^1.2.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "env-cmd": "^10.1.0",
