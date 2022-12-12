@@ -1,6 +1,7 @@
 import { Avalanche } from "avalanche/dist"
 import { KeystoreAPI } from "avalanche/dist/apis/keystore"
 import axios from "axios";
+import { vars } from "../utils/variables"
 
 export const avaxhealth = async (req, res) => {
 
@@ -11,7 +12,8 @@ export const avaxhealth = async (req, res) => {
             "id": 1,
             "method": "health.health"
         }
-        const response = await axios.post(`${process.env.AVALANCHE_IP}/ext/health`, data);
+
+        const response = await axios.post(`${vars.AVAX_DNS}/ext/health`, data);
         res.status(200).send({
             message: response.data
         });
@@ -25,10 +27,11 @@ export const avaxhealth = async (req, res) => {
 
 export const createUser = async (req, res) => {
 
-    const ip: string = "185.193.66.140"
-    const port: number = 9650
-    const protocol: string = "http"
-    const networkID: number = 43114
+    const ip: string = process.env.AVAX_IP
+    const port: number = process.env.AVAX_PORT_NUMBER
+    const protocol: string = process.env.AVAX_PROTOCOL
+    const networkID: number = process.env.AVAX_NETWORK_ID
+
     const avalanche: Avalanche = new Avalanche(ip, port, protocol, networkID)
     const keystore: KeystoreAPI = avalanche.NodeKeys()
 
