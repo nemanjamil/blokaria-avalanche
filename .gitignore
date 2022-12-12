@@ -5,3 +5,4 @@ logs/
 src/app/.notes
 yarn.lock
 package-lock.json
+.env
